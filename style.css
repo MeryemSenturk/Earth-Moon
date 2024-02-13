@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-image: url(../img/space2.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.earth {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+}
+.earth img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200px;
+  width: 200px;
+}
+
+.moon-container {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+}
+.moon {
+  animation: spin 20s linear infinite;
+  transform-origin: 25px;
+}
+.moon img {
+  height: 50px;
+  width: 50px;
+  transform: translate(-160px, -160px);
+}
+
+img {
+  border-radius: 50%;
+  box-shadow: 0 0 12em 1em rgba(110, 140, 200, 0.6);
+}
+
+.earth .more-info {
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 1), black);
+  border-radius: 1em;
+  color: #fff;
+  opacity: 0;
+  padding: 1em;
+  transform-origin: right;
+  transform: scale(0.9);
+  width: 400px;
+}
+.earth .more-info h1 {
+  margin: 0 0 1em;
+  text-align: right;
+}
+.earth .more-info li{
+    padding-left: 1em;
+    list-style: inside;
+}
+
+.earth:hover img {
+  transform: translateX(-75px) translateY(-75px) scale(0.5);
+}
+
+.earth:hover ~ .moon-container {
+  transform: translateX(-75px) translateY(-75px) scale(0.5);
+}
+.earth:hover ~ .moon-container img { transform: translateX(-140px) translateY(-140px); }
+
+.earth:hover .more-info {
+  opacity: 1;
+  transform: none;
+}
+
+.container *{
+  transition: all 5s cubic-bezier(0, 1.5, 0.3, 1);
+}
+@keyframes spin {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
