@@ -1,6 +1,6 @@
 # Earth and Moon
 
-![Earth and Moon Project]()
+![Earth and Moon Project](./chrome-capture-2024-2-13.gif)
 
 ## Description
 
